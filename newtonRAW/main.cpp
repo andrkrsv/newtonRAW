@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Система функций
 double f1(double x, double y) {
     return x * x + y * y - 5;
 }
@@ -12,7 +11,6 @@ double f2(double x, double y) {
     return x - y - 1;
 }
 
-// Производные системы функций
 double f1_x(double x, double y) {
     return 2 * x;
 }
@@ -31,7 +29,6 @@ double f2_y(double x, double y) {
 
 // Решение СЛАУ методом Ньютона-Рафсона
 void solve_SLAE_NR(double x0, double y0, double eps) {
-    // Итерации метода Ньютона-Рафсона
     for (int i = 0; i < 100; ++i) {
         double det = f1_x(x0, y0) * f2_y(x0, y0) - f1_y(x0, y0) * f2_x(x0, y0);
 
@@ -46,5 +43,5 @@ void solve_SLAE_NR(double x0, double y0, double eps) {
         }
     }
 
-    cout << "Решение уравнения: x = " << x0 << ", y = " << y0 << endl;
+    cout << "x = " << x0 << ", y = " << y0 << endl;
 }
